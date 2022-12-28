@@ -4,7 +4,7 @@ jobs:
   notification_of_issue:
    runs-on: ubuntu-latest
    steps:
-    - name: Notify of the issue
-      run: echo "${{ toJSON(github) }}"
-    - name: Event info of the issue
+    - name: Event info
+      run: echo "${{ toJSON(github.event) }}"
+    - name: Event info, only the issue part
       run: echo "${{ toJSON(github.event.issue) }}"      
